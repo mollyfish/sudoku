@@ -50,10 +50,13 @@ header {
 .quad2, .quad4, .quad6, .quad8 {
   background-color: #ddd;
 }
-.selected, .chosen {
+.selected {
   border: 1px solid #ff0000;
   background-color: #FFB9B9;
   color: #ff0000;
+}
+.chosen {
+  /*border: 1px solid #ff0000;*/
 }
 #quadrant1, #quadrant2, #quadrant3, #quadrant4, #quadrant5, #quadrant6, #quadrant7, #quadrant8, #quadrant9  {
   height: 120px;
