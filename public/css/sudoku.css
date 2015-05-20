@@ -43,8 +43,19 @@ header {
 .tile p, .choice p {
   margin-top: 8px;
 }
-.selected {
+.selected, .chosen {
   border: 1px solid #ff0000;
   background-color: #FFB9B9;
   color: #ff0000;
+}
+/*.quad1, .quad3, .quad5, .quad7, .quad9 {
+  background-color: blue;
+}
+.quad2, .quad4, .quad6, .quad8 {
+  background-color: yellow;
+}*/
+#quadrant1, #quadrant2, #quadrant3, #quadrant4, #quadrant5, #quadrant6, #quadrant7, #quadrant8, #quadrant9  {
+  height: 120px;
+  width: 120px;
+  float: left;
 }

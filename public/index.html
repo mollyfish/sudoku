@@ -14,106 +14,116 @@
       <h1>Sudoku</h1>
     </header>
     <section id="choices">
-      <div class="choice"><p>1</p></div>
-      <div class="choice"><p>2</p></div>
-      <div class="choice"><p>3</p></div>
-      <div class="choice"><p>4</p></div>
-      <div class="choice"><p>5</p></div>
-      <div class="choice"><p>6</p></div>
-      <div class="choice"><p>7</p></div>
-      <div class="choice"><p>8</p></div>
-      <div class="choice"><p>9</p></div>
+      <div class="choice" id="one"><p>1</p></div>
+      <div class="choice" id="two"><p>2</p></div>
+      <div class="choice" id="three"><p>3</p></div>
+      <div class="choice" id="four"><p>4</p></div>
+      <div class="choice" id="five"><p>5</p></div>
+      <div class="choice" id="six"><p>6</p></div>
+      <div class="choice" id="seven"><p>7</p></div>
+      <div class="choice" id="eight"><p>8</p></div>
+      <div class="choice" id="nine"><p>9</p></div>
     </section>
     <section id="board">
-        <div class="tile row1 column1 quad1"><p>1</p></div>
-        <div class="tile row1 column2 quad1"></div>
-        <div class="tile row1 column3 quad1"><p>2</p></div>
-        <div class="tile row1 column4 quad2"></div>
-        <div class="tile row1 column5 quad2"></div>
-        <div class="tile row1 column6 quad2"></div>
-        <div class="tile row1 column7 quad3"></div>
-        <div class="tile row1 column8 quad3"></div>
-        <div class="tile row1 column9 quad3"></div>
-
-        <div class="tile row2 column1 quad1"></div>
-        <div class="tile row2 column2 quad1"></div>
-        <div class="tile row2 column3 quad1"></div>
-        <div class="tile row2 column4 quad2"><p>3</p></div>
-        <div class="tile row2 column5 quad2"></div>
-        <div class="tile row2 column6 quad2"></div>
-        <div class="tile row2 column7 quad3"></div>
-        <div class="tile row2 column8 quad3"></div>
-        <div class="tile row2 column9 quad3"></div>
-
-        <div class="tile row3 column1 quad1"></div>
-        <div class="tile row3 column2 quad1"></div>
-        <div class="tile row3 column3 quad1"></div>
-        <div class="tile row3 column4 quad2"></div>
-        <div class="tile row3 column5 quad2"></div>
-        <div class="tile row3 column6 quad2"><p>4</p></div>
-        <div class="tile row3 column7 quad3"></div>
-        <div class="tile row3 column8 quad3"></div>
-        <div class="tile row3 column9 quad3"></div>
-
-        <div class="tile row4 column1 quad4"></div>
-        <div class="tile row4 column2 quad4"></div>
-        <div class="tile row4 column3 quad4"></div>
-        <div class="tile row4 column4 quad5"></div>
-        <div class="tile row4 column5 quad5"><p>5</p></div>
-        <div class="tile row4 column6 quad5"></div>
-        <div class="tile row4 column7 quad6"></div>
-        <div class="tile row4 column8 quad6"></div>
-        <div class="tile row4 column9 quad6"></div>
-
-        <div class="tile row5 column1 quad4"></div>
-        <div class="tile row5 column2 quad4"></div>
-        <div class="tile row5 column3 quad4"></div>
-        <div class="tile row5 column4 quad5"></div>
-        <div class="tile row5 column5 quad5"></div>
-        <div class="tile row5 column6 quad5"></div>
-        <div class="tile row5 column7 quad6"><p>6</p></div>
-        <div class="tile row5 column8 quad6"></div>
-        <div class="tile row5 column9 quad6"></div>
-
-        <div class="tile row6 column1 quad4"></div>
-        <div class="tile row6 column2 quad4"></div>
-        <div class="tile row6 column3 quad4"></div>
-        <div class="tile row6 column4 quad5"></div>
-        <div class="tile row6 column5 quad5"></div>
-        <div class="tile row6 column6 quad5"></div>
-        <div class="tile row6 column7 quad6"><p>7</p></div>
-        <div class="tile row6 column8 quad6"></div>
-        <div class="tile row6 column9 quad6"></div>
-
-        <div class="tile row7 column1 quad7"></div>
-        <div class="tile row7 column2 quad7"></div>
-        <div class="tile row7 column3 quad7"></div>
-        <div class="tile row7 column4 quad8"></div>
-        <div class="tile row7 column5 quad8"></div>
-        <div class="tile row7 column6 quad8"></div>
-        <div class="tile row7 column7 quad9"><p>8</p></div>
-        <div class="tile row7 column8 quad9"></div>
-        <div class="tile row7 column9 quad9"></div>
-
-        <div class="tile row8 column1 quad7"></div>
-        <div class="tile row8 column2 quad7"></div>
-        <div class="tile row8 column3 quad7"></div>
-        <div class="tile row8 column4 quad8"></div>
-        <div class="tile row8 column5 quad8"></div>
-        <div class="tile row8 column6 quad8"><p>8</p></div>
-        <div class="tile row8 column7 quad9"></div>
-        <div class="tile row8 column8 quad9"></div>
-        <div class="tile row8 column9 quad9"></div>
-
-        <div class="tile row9 column1 quad7"></div>
-        <div class="tile row9 column2 quad7"></div>
-        <div class="tile row9 column3 quad7"></div>
-        <div class="tile row9 column4 quad8"><p>9</p></div>
-        <div class="tile row9 column5 quad8"></div>
-        <div class="tile row9 column6 quad8"></div>
-        <div class="tile row9 column7 quad9"></div>
-        <div class="tile row9 column8 quad9"></div>
-        <div class="tile row9 column9 quad9"></div>
+      <section id="quadrant1">
+        <div class="tile row1 column1 quad1" id="1"><p>1</p></div>
+        <div class="tile row1 column2 quad1" id="2"></div>
+        <div class="tile row1 column3 quad1" id="3"><p>2</p></div>
+        <div class="tile row2 column1 quad1" id="10"></div>
+        <div class="tile row2 column2 quad1" id="11"></div>
+        <div class="tile row2 column3 quad1" id="12"></div>
+        <div class="tile row3 column1 quad1" id="19"></div>
+        <div class="tile row3 column2 quad1" id="20"></div>
+        <div class="tile row3 column3 quad1" id="21"></div>
+      </section>
+      <section id="quadrant2">
+        <div class="tile row1 column4 quad2" id="4"></div>
+        <div class="tile row1 column5 quad2" id="5"></div>
+        <div class="tile row1 column6 quad2" id="6"></div>
+        <div class="tile row2 column4 quad2" id="13"><p>3</p></div>
+        <div class="tile row2 column5 quad2" id="14"></div>
+        <div class="tile row2 column6 quad2" id="15"></div>
+        <div class="tile row3 column4 quad2" id="22"></div>
+        <div class="tile row3 column5 quad2" id="23"></div>
+        <div class="tile row3 column6 quad2" id="24"><p>4</p></div>
+      </section>
+      <section id="quadrant3">
+        <div class="tile row1 column7 quad3" id="7"></div>
+        <div class="tile row1 column8 quad3" id="8"></div>
+        <div class="tile row1 column9 quad3" id="9"></div>
+        <div class="tile row2 column7 quad3" id="16"></div>
+        <div class="tile row2 column8 quad3" id="17"></div>
+        <div class="tile row2 column9 quad3" id="18"></div>
+        <div class="tile row3 column7 quad3" id="25"></div>
+        <div class="tile row3 column8 quad3" id="26"></div>
+        <div class="tile row3 column9 quad3" id="27"></div>
+      </section>
+      <section id="quadrant4">
+        <div class="tile row4 column1 quad4" id="28"></div>
+        <div class="tile row4 column2 quad4" id="29"></div>
+        <div class="tile row4 column3 quad4" id="30"></div>
+        <div class="tile row5 column1 quad4" id="37"></div>
+        <div class="tile row5 column2 quad4" id="38"></div>
+        <div class="tile row5 column3 quad4" id="39"></div>
+        <div class="tile row6 column1 quad4" id="46"></div>
+        <div class="tile row6 column2 quad4" id="47"></div>
+        <div class="tile row6 column3 quad4" id="48"></div>
+      </section>
+      <section id="quadrant5">
+        <div class="tile row4 column4 quad5" id="31"></div>
+        <div class="tile row4 column5 quad5" id="32"><p>5</p></div>
+        <div class="tile row4 column6 quad5" id="33"></div>
+        <div class="tile row5 column4 quad5" id="40"></div>
+        <div class="tile row5 column5 quad5" id="41"></div>
+        <div class="tile row5 column6 quad5" id="42"></div>
+        <div class="tile row6 column4 quad5" id="49"></div>
+        <div class="tile row6 column5 quad5" id="50"></div>
+        <div class="tile row6 column6 quad5" id="51"></div>
+      </section>
+      <section id="quadrant6">
+        <div class="tile row4 column7 quad6" id="34"></div>
+        <div class="tile row4 column8 quad6" id="35"></div>
+        <div class="tile row4 column9 quad6" id="36"></div> 
+        <div class="tile row5 column7 quad6" id="43"><p>6</p></div>
+        <div class="tile row5 column8 quad6" id="44"></div>
+        <div class="tile row5 column9 quad6" id="45"></div>
+        <div class="tile row6 column7 quad6" id="52"><p>7</p></div>
+        <div class="tile row6 column8 quad6" id="53"></div>
+        <div class="tile row6 column9 quad6" id="54"></div>
+      </section>
+      <section id="quadrant7">
+        <div class="tile row7 column1 quad7" id="55"></div>
+        <div class="tile row7 column2 quad7" id="56"></div>
+        <div class="tile row7 column3 quad7" id="57"></div>
+        <div class="tile row8 column1 quad7" id="64"></div>
+        <div class="tile row8 column2 quad7" id="65"></div>
+        <div class="tile row8 column3 quad7" id="66"></div>
+        <div class="tile row9 column1 quad7" id="73"></div>
+        <div class="tile row9 column2 quad7" id="74"></div>
+        <div class="tile row9 column3 quad7" id="75"></div>
+      </section>
+      <section id="quadrant8">
+        <div class="tile row7 column4 quad8" id="58"></div>
+        <div class="tile row7 column5 quad8" id="59"></div>
+        <div class="tile row7 column6 quad8" id="60"></div>
+        <div class="tile row8 column4 quad8" id="67"></div>
+        <div class="tile row8 column5 quad8" id="68"></div>
+        <div class="tile row8 column6 quad8" id="69"><p>8</p></div>
+        <div class="tile row9 column4 quad8" id="76"><p>9</p></div>
+        <div class="tile row9 column5 quad8" id="77"></div>
+        <div class="tile row9 column6 quad8" id="78"></div>
+      </section>
+      <section id="quadrant9">
+        <div class="tile row7 column7 quad9" id="61"><p>8</p></div>
+        <div class="tile row7 column8 quad9" id="62"></div>
+        <div class="tile row7 column9 quad9" id="63"></div>
+        <div class="tile row8 column7 quad9" id="70"></div>
+        <div class="tile row8 column8 quad9" id="71"></div>
+        <div class="tile row8 column9 quad9" id="72"></div>
+        <div class="tile row9 column7 quad9" id="79"></div>
+        <div class="tile row9 column8 quad9" id="80"></div>
+        <div class="tile row9 column9 quad9" id="81"></div>
+      </section>
     </section>
     
   </main>
