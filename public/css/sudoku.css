@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  margin: 1em;
+}
+h1 {
+  font-size: 200%;
+}
+p {
+  font-size: 100%;
+}
+main {
+  width: 100%;
+}
+header {
+  width: 360px;
+  padding-bottom: 1em;
+}
+#board {
+  width: 360px;
+  height: 360px;
+  background-color: #efefef;
+  float: left;
+}
+#choices {
+  float: left;
+  margin-right: 1em;
+}
+.tile, .choice {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 1px;
+  float: left;
+  text-align: center;
+  font-size: 130%;
+}
+.choice {
+  float: none;
+  margin-bottom: 2px;
+}
+.tile p, .choice p {
+  margin-top: 8px;
+}
+.selected {
+  border: 1px solid #ff0000;
+  background-color: #FFB9B9;
+  color: #ff0000;
+}
