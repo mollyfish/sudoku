@@ -5,44 +5,69 @@ $(function(){
   var children;
   var row;
   var col;
-  var squareValue;
+  var shuffleOne;
+  var shuffleTwo;
+  var shuffleThree;
+  var shuffleFour;
+  var shuffleFive;
+  var shuffleSix;
+  var shuffleSeven;
+  var shuffleEight;
+  var shuffleNine;
+
 
   $('#new-game').click(function() {
-    console.log('play new game');
-    $('.tile').each(function(i) {
-        // console.log($(this).attr('id'));
-        $(this).addClass('selected');
-        // console.log($(this).attr('class'));
-        squareValue = Math.floor(Math.random() * (10 - 1)) + 1;
-        // console.log('assigned value: ' + squareValue);
+    function shuffle(deck) {
+      var i = deck.length,
+          j = 0,
+          temp;
+      while (i--) {
+          j = Math.floor(Math.random() * (i+1));
+          temp = deck[i];
+          deck[i] = deck[j];
+          deck[j] = temp;
+      }
+      return deck;
+    };
+    shuffleOne = shuffle([1,2,3,4,5,6,7,8,9]);
+    console.log(shuffleOne);
+    $('.quad1').each(function(i) {
+      $(this).html('<p>' + shuffleOne[i] + '</p>');
+    })
+    shuffleTwo = shuffle([1,2,3,4,5,6,7,8,9]);
+    console.log(shuffleTwo);
+    shuffleThree = shuffle([1,2,3,4,5,6,7,8,9]);
+    console.log(shuffleThree);
 
-        checkQuad();
-        checkRow();
-        checkCol();
-        console.log($(this).attr('class'));
-        if ($.inArray($(this).html(),children) == -1 || $.inArray($(this).html(),row) == -1 || $.inArray($(this).html(),col) == -1) {
-          console.log('already used!');
-            squareValue = Math.floor(Math.random() * (10 - 1)) + 1;
-      
-        } else {
-          
+    while (shuffleOne[0] === shuffleTwo[0] || shuffleOne[0] === shuffleTwo[1] || shuffleOne[0] === shuffleTwo[2] || shuffleOne[1] === shuffleTwo[0] || shuffleOne[1] === shuffleTwo[1] || shuffleOne[1] === shuffleTwo[2] || shuffleOne[2] === shuffleTwo[0] || shuffleOne[2] === shuffleTwo[1] || shuffleOne[2] === shuffleTwo[2] || shuffleOne[3] === shuffleTwo[3] || shuffleOne[3] === shuffleTwo[4] || shuffleOne[3] === shuffleTwo[5] || shuffleOne[4] === shuffleTwo[3] || shuffleOne[4] === shuffleTwo[4] || shuffleOne[4] === shuffleTwo[5] || shuffleOne[5] === shuffleTwo[3] || shuffleOne[5] === shuffleTwo[4] || shuffleOne[5] === shuffleTwo[5] || shuffleOne[6] === shuffleTwo[6] || shuffleOne[6] === shuffleTwo[7] || shuffleOne[6] === shuffleTwo[8] || shuffleOne[7] === shuffleTwo[6] || shuffleOne[7] === shuffleTwo[7] || shuffleOne[7] === shuffleTwo[8] || shuffleOne[8] === shuffleTwo[6] || shuffleOne[8] === shuffleTwo[7] || shuffleOne[8] === shuffleTwo[8]) {
+      console.log('we have a match in 2');
+      shuffleTwo = shuffle([1,2,3,4,5,6,7,8,9]);
+      console.log(shuffleTwo);
+    }
+    while (shuffleOne[0] === shuffleThree[0] || shuffleTwo[0] === shuffleThree[0] || shuffleOne[0] === shuffleThree[1] || shuffleTwo[0] === shuffleThree[1] || shuffleOne[0] === shuffleThree[2] || shuffleTwo[0] === shuffleThree[2] || shuffleOne[1] === shuffleThree[0] || shuffleTwo[1] === shuffleThree[0] || shuffleOne[1] === shuffleThree[1] || shuffleTwo[1] === shuffleThree[1] || shuffleOne[1] === shuffleThree[2] || shuffleTwo[1] === shuffleThree[2] || shuffleOne[2] === shuffleThree[0] || shuffleTwo[2] === shuffleThree[0] || shuffleOne[2] === shuffleThree[1] || shuffleTwo[2] === shuffleThree[1] || shuffleOne[2] === shuffleThree[2] || shuffleTwo[2] === shuffleThree[2] || shuffleOne[3] === shuffleThree[3] || shuffleTwo[3] === shuffleThree[3] || shuffleOne[3] === shuffleThree[4] || shuffleTwo[3] === shuffleThree[4] || shuffleOne[3] === shuffleThree[5] || shuffleTwo[3] === shuffleThree[5] || shuffleOne[4] === shuffleThree[3] || shuffleTwo[4] === shuffleThree[3] || shuffleOne[4] === shuffleThree[4] || shuffleTwo[4] === shuffleThree[4] || shuffleOne[4] === shuffleThree[5] || shuffleTwo[4] === shuffleThree[5] || shuffleOne[5] === shuffleThree[3] || shuffleTwo[5] === shuffleThree[3] || shuffleOne[5] === shuffleThree[4] || shuffleTwo[5] === shuffleThree[4] || shuffleOne[5] === shuffleThree[5] || shuffleTwo[5] === shuffleThree[5] || shuffleOne[6] === shuffleThree[6] || shuffleTwo[6] === shuffleThree[6] || shuffleOne[6] === shuffleThree[7] || shuffleTwo[6] === shuffleThree[7] || shuffleOne[6] === shuffleThree[8] || shuffleTwo[6] === shuffleThree[8] || shuffleOne[7] === shuffleThree[6] || shuffleTwo[7] === shuffleThree[6] || shuffleOne[7] === shuffleThree[7] || shuffleTwo[7] === shuffleThree[7] || shuffleOne[7] === shuffleThree[8] || shuffleTwo[7] === shuffleThree[8] || shuffleOne[8] === shuffleThree[6] || shuffleTwo[8] === shuffleThree[6] || shuffleOne[8] === shuffleThree[7] || shuffleTwo[8] === shuffleThree[7] || shuffleOne[8] === shuffleThree[8] || shuffleTwo[8] === shuffleThree[8]) {
+      console.log('we have a match in 3');
+      shuffleThree = shuffle([1,2,3,4,5,6,7,8,9]);
+      console.log(shuffleThree);
+    }
 
-          console.log('not there!');
-          $(this).html('<p>' + squareValue + '</p>');
-          console.log($(this));
-          
-            
-        };
-
-        // while (squareValue === kittenNumber1) {
-        // kittenNumber2 = Math.floor(Math.random() * (kittens.length - 1));
-        // }
-
-        
-        // console.log($(this).html());
-        $(this).removeClass('selected');
-        // console.log($(this).attr('class'));
-      })
+    $('.quad2').each(function(i) {
+      $(this).html('<p>' + shuffleTwo[i] + '</p>');
+    })
+    $('.quad3').each(function(i) {
+      $(this).html('<p>' + shuffleThree[i] + '</p>');
+    })
+    
+    shuffleFour = shuffle([1,2,3,4,5,6,7,8,9]);
+    console.log('Four: ' + shuffleFour);
+    while (shuffleOne[0] === shuffleFour[0] || shuffleOne[0] === shuffleFour[3] || shuffleOne[0] === shuffleFour[6] || shuffleOne[1] === shuffleFour[1] || shuffleOne[1] === shuffleFour[4] || shuffleOne[1] === shuffleFour[7] || shuffleOne[2] === shuffleFour[2] || shuffleOne[2] === shuffleFour[5] || shuffleOne[2] === shuffleFour[8] || shuffleOne[3] === shuffleFour[0] || shuffleOne[3] === shuffleFour[3] || shuffleOne[3] === shuffleFour[6] || shuffleOne[4] === shuffleFour[1] || shuffleOne[4] === shuffleFour[4] || shuffleOne[4] === shuffleFour[7] || shuffleOne[5] === shuffleFour[2] || shuffleOne[5] === shuffleFour[5] || shuffleOne[5] === shuffleFour[8] || shuffleOne[6] === shuffleFour[0] || shuffleOne[6] === shuffleFour[3] || shuffleOne[6] === shuffleFour[6] || shuffleOne[7] === shuffleFour[1] || shuffleOne[7] === shuffleFour[4] || shuffleOne[7] === shuffleFour[7] || shuffleOne[8] === shuffleFour[2] || shuffleOne[8] === shuffleFour[5] || shuffleOne[8] === shuffleFour[8]) {
+      console.log('we have a match in 4');
+      shuffleFour = shuffle([1,2,3,4,5,6,7,8,9]);
+      console.log(shuffleFour);
+    }
+    $('.quad4').each(function(i) {
+      $(this).html('<p>' + shuffleFour[i] + '</p>');
+    })
+ 
   });
 
 
