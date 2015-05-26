@@ -5,11 +5,53 @@ $(function(){
   var children;
   var row;
   var col;
+  var squareValue;
+
+  $('#new-game').click(function() {
+    console.log('play new game');
+    $('.tile').each(function(i) {
+        // console.log($(this).attr('id'));
+        $(this).addClass('selected');
+        // console.log($(this).attr('class'));
+        squareValue = Math.floor(Math.random() * (10 - 1)) + 1;
+        // console.log('assigned value: ' + squareValue);
+
+        checkQuad();
+        checkRow();
+        checkCol();
+        console.log($(this).attr('class'));
+        if ($.inArray($(this).html(),children) == -1 || $.inArray($(this).html(),row) == -1 || $.inArray($(this).html(),col) == -1) {
+          console.log('already used!');
+            squareValue = Math.floor(Math.random() * (10 - 1)) + 1;
+      
+        } else {
+          
+
+          console.log('not there!');
+          $(this).html('<p>' + squareValue + '</p>');
+          console.log($(this));
+          
+            
+        };
+
+        // while (squareValue === kittenNumber1) {
+        // kittenNumber2 = Math.floor(Math.random() * (kittens.length - 1));
+        // }
+
+        
+        // console.log($(this).html());
+        $(this).removeClass('selected');
+        // console.log($(this).attr('class'));
+      })
+  });
+
+
   var checkQuad = function() {
     children = [];
     $('.selected').parent().children().each(function(i) {
       children.push($(this).html());
     })
+    console.log('checkQuad is running');
   };
   var checkRow = function() {
     row = [];
@@ -59,6 +101,7 @@ $(function(){
         row.push($(this).html());
       })
     }
+    console.log('checkRow is running');
   };
   var checkCol = function() {
     col = [];
@@ -108,6 +151,7 @@ $(function(){
         col.push($(this).html());
       })
     }
+    console.log('checkCol is running');
   };
 
   $('.tile').click(function() {
