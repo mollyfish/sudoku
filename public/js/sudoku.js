@@ -14,6 +14,15 @@ $(function(){
   var shuffleSeven;
   var shuffleEight;
   var shuffleNine;
+  var column1 = [];
+  var column2 = [];
+  var column3 = [];
+  var column4 = [];
+  var column5 = [];
+  var column6 = [];
+  var column7 = [];
+  var column8 = [];
+  var column9 = [];
 
 
   $('#new-game').click(function() {
@@ -30,43 +39,150 @@ $(function(){
       return deck;
     };
     shuffleOne = shuffle([1,2,3,4,5,6,7,8,9]);
-    console.log(shuffleOne);
-    $('.quad1').each(function(i) {
+    $('.row1').each(function(i) {
       $(this).html('<p>' + shuffleOne[i] + '</p>');
     })
-    shuffleTwo = shuffle([1,2,3,4,5,6,7,8,9]);
-    console.log(shuffleTwo);
-    shuffleThree = shuffle([1,2,3,4,5,6,7,8,9]);
-    console.log(shuffleThree);
+    // shuffleOne.splice(0,1);
+    // shuffleTwo = shuffle(shuffleOne);
+    // $('.col1:not(:first)').each(function(i) {
+    //   $(this).html('<p>' + shuffleTwo[i] + '</p>');
+    // })
 
-    while (shuffleOne[0] === shuffleTwo[0] || shuffleOne[0] === shuffleTwo[1] || shuffleOne[0] === shuffleTwo[2] || shuffleOne[1] === shuffleTwo[0] || shuffleOne[1] === shuffleTwo[1] || shuffleOne[1] === shuffleTwo[2] || shuffleOne[2] === shuffleTwo[0] || shuffleOne[2] === shuffleTwo[1] || shuffleOne[2] === shuffleTwo[2] || shuffleOne[3] === shuffleTwo[3] || shuffleOne[3] === shuffleTwo[4] || shuffleOne[3] === shuffleTwo[5] || shuffleOne[4] === shuffleTwo[3] || shuffleOne[4] === shuffleTwo[4] || shuffleOne[4] === shuffleTwo[5] || shuffleOne[5] === shuffleTwo[3] || shuffleOne[5] === shuffleTwo[4] || shuffleOne[5] === shuffleTwo[5] || shuffleOne[6] === shuffleTwo[6] || shuffleOne[6] === shuffleTwo[7] || shuffleOne[6] === shuffleTwo[8] || shuffleOne[7] === shuffleTwo[6] || shuffleOne[7] === shuffleTwo[7] || shuffleOne[7] === shuffleTwo[8] || shuffleOne[8] === shuffleTwo[6] || shuffleOne[8] === shuffleTwo[7] || shuffleOne[8] === shuffleTwo[8]) {
-      console.log('we have a match in 2');
-      shuffleTwo = shuffle([1,2,3,4,5,6,7,8,9]);
-      console.log(shuffleTwo);
-    }
-    while (shuffleOne[0] === shuffleThree[0] || shuffleTwo[0] === shuffleThree[0] || shuffleOne[0] === shuffleThree[1] || shuffleTwo[0] === shuffleThree[1] || shuffleOne[0] === shuffleThree[2] || shuffleTwo[0] === shuffleThree[2] || shuffleOne[1] === shuffleThree[0] || shuffleTwo[1] === shuffleThree[0] || shuffleOne[1] === shuffleThree[1] || shuffleTwo[1] === shuffleThree[1] || shuffleOne[1] === shuffleThree[2] || shuffleTwo[1] === shuffleThree[2] || shuffleOne[2] === shuffleThree[0] || shuffleTwo[2] === shuffleThree[0] || shuffleOne[2] === shuffleThree[1] || shuffleTwo[2] === shuffleThree[1] || shuffleOne[2] === shuffleThree[2] || shuffleTwo[2] === shuffleThree[2] || shuffleOne[3] === shuffleThree[3] || shuffleTwo[3] === shuffleThree[3] || shuffleOne[3] === shuffleThree[4] || shuffleTwo[3] === shuffleThree[4] || shuffleOne[3] === shuffleThree[5] || shuffleTwo[3] === shuffleThree[5] || shuffleOne[4] === shuffleThree[3] || shuffleTwo[4] === shuffleThree[3] || shuffleOne[4] === shuffleThree[4] || shuffleTwo[4] === shuffleThree[4] || shuffleOne[4] === shuffleThree[5] || shuffleTwo[4] === shuffleThree[5] || shuffleOne[5] === shuffleThree[3] || shuffleTwo[5] === shuffleThree[3] || shuffleOne[5] === shuffleThree[4] || shuffleTwo[5] === shuffleThree[4] || shuffleOne[5] === shuffleThree[5] || shuffleTwo[5] === shuffleThree[5] || shuffleOne[6] === shuffleThree[6] || shuffleTwo[6] === shuffleThree[6] || shuffleOne[6] === shuffleThree[7] || shuffleTwo[6] === shuffleThree[7] || shuffleOne[6] === shuffleThree[8] || shuffleTwo[6] === shuffleThree[8] || shuffleOne[7] === shuffleThree[6] || shuffleTwo[7] === shuffleThree[6] || shuffleOne[7] === shuffleThree[7] || shuffleTwo[7] === shuffleThree[7] || shuffleOne[7] === shuffleThree[8] || shuffleTwo[7] === shuffleThree[8] || shuffleOne[8] === shuffleThree[6] || shuffleTwo[8] === shuffleThree[6] || shuffleOne[8] === shuffleThree[7] || shuffleTwo[8] === shuffleThree[7] || shuffleOne[8] === shuffleThree[8] || shuffleTwo[8] === shuffleThree[8]) {
-      console.log('we have a match in 3');
-      shuffleThree = shuffle([1,2,3,4,5,6,7,8,9]);
-      console.log(shuffleThree);
-    }
+    $('.row2').each(function(i) {
+      var value = Math.floor(Math.random() * (10 - 1) + 1);
+      var displayValue = '<p>' + value + '</p>';
+      console.log(displayValue);
 
-    $('.quad2').each(function(i) {
-      $(this).html('<p>' + shuffleTwo[i] + '</p>');
+      if($(this).hasClass('col1')) {
+        $('.col1').each(function(i) {
+          column1.push($(this).html());
+        })
+        console.log(column1);
+        while ($.inArray(displayValue,column1) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+      if($(this).hasClass('col2')) {
+        $('.col2').each(function(i) {
+          column2.push($(this).html());
+        })
+        console.log(column2);
+        while ($.inArray(displayValue,column2) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+      if($(this).hasClass('col3')) {
+        $('.col3').each(function(i) {
+          column3.push($(this).html());
+        })
+        console.log(column3);
+        while ($.inArray(displayValue,column3) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+      if($(this).hasClass('col4')) {
+        $('.col4').each(function(i) {
+          column4.push($(this).html());
+        })
+        console.log(column4);
+        while ($.inArray(displayValue,column4) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+      if($(this).hasClass('col5')) {
+        $('.col5').each(function(i) {
+          column5.push($(this).html());
+        })
+        console.log(column5);
+        while ($.inArray(displayValue,column5) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+      if($(this).hasClass('col6')) {
+        $('.col6').each(function(i) {
+          column6.push($(this).html());
+        })
+        console.log(column6);
+        while ($.inArray(displayValue,column6) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+      if($(this).hasClass('col7')) {
+        $('.col7').each(function(i) {
+          column7.push($(this).html());
+        })
+        console.log(column7);
+        while ($.inArray(displayValue,column7) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+      if($(this).hasClass('col8')) {
+        $('.col8').each(function(i) {
+          column8.push($(this).html());
+        })
+        console.log(column8);
+        while ($.inArray(displayValue,column8) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+      if($(this).hasClass('col9')) {
+        $('.col9').each(function(i) {
+          column9.push($(this).html());
+        })
+        console.log(column9);
+        while ($.inArray(displayValue,column9) !== -1) {
+          console.log('in the array');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+        $(this).html(displayValue);
+      }
+
+      
     })
-    $('.quad3').each(function(i) {
-      $(this).html('<p>' + shuffleThree[i] + '</p>');
-    })
+
+    // var value = Math.floor(Math.random() * (10 - 1) + 1);
+    // console.log('value: ' + value);
+    // $('.col1').each(function(i) {
+    //   console.log('this html: ' + $(this).html());
+    // })
     
-    shuffleFour = shuffle([1,2,3,4,5,6,7,8,9]);
-    console.log('Four: ' + shuffleFour);
-    while (shuffleOne[0] === shuffleFour[0] || shuffleOne[0] === shuffleFour[3] || shuffleOne[0] === shuffleFour[6] || shuffleOne[1] === shuffleFour[1] || shuffleOne[1] === shuffleFour[4] || shuffleOne[1] === shuffleFour[7] || shuffleOne[2] === shuffleFour[2] || shuffleOne[2] === shuffleFour[5] || shuffleOne[2] === shuffleFour[8] || shuffleOne[3] === shuffleFour[0] || shuffleOne[3] === shuffleFour[3] || shuffleOne[3] === shuffleFour[6] || shuffleOne[4] === shuffleFour[1] || shuffleOne[4] === shuffleFour[4] || shuffleOne[4] === shuffleFour[7] || shuffleOne[5] === shuffleFour[2] || shuffleOne[5] === shuffleFour[5] || shuffleOne[5] === shuffleFour[8] || shuffleOne[6] === shuffleFour[0] || shuffleOne[6] === shuffleFour[3] || shuffleOne[6] === shuffleFour[6] || shuffleOne[7] === shuffleFour[1] || shuffleOne[7] === shuffleFour[4] || shuffleOne[7] === shuffleFour[7] || shuffleOne[8] === shuffleFour[2] || shuffleOne[8] === shuffleFour[5] || shuffleOne[8] === shuffleFour[8]) {
-      console.log('we have a match in 4');
-      shuffleFour = shuffle([1,2,3,4,5,6,7,8,9]);
-      console.log(shuffleFour);
-    }
-    $('.quad4').each(function(i) {
-      $(this).html('<p>' + shuffleFour[i] + '</p>');
-    })
+    
+    
+    
  
   });
 
