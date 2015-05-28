@@ -47,8 +47,8 @@ $(function(){
     // $('.col1:not(:first)').each(function(i) {
     //   $(this).html('<p>' + shuffleTwo[i] + '</p>');
     // })
-
-    $('.row2').each(function(i) {
+var fillInRow = function(rowclass) {
+    $(rowclass).each(function(i) {
       var value = Math.floor(Math.random() * (10 - 1) + 1);
       var displayValue = '<p>' + value + '</p>';
       console.log(displayValue);
@@ -170,21 +170,13 @@ $(function(){
         }
         $(this).html(displayValue);
       }
-
-      
     })
-
-    // var value = Math.floor(Math.random() * (10 - 1) + 1);
-    // console.log('value: ' + value);
-    // $('.col1').each(function(i) {
-    //   console.log('this html: ' + $(this).html());
-    // })
-    
-    
-    
-    
- 
+};
+fillInRow('.row2')
+fillInRow('.row3')
   });
+
+
 
 
   var checkQuad = function() {
