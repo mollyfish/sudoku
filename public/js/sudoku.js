@@ -14,15 +14,6 @@ $(function(){
   var shuffleSeven;
   var shuffleEight;
   var shuffleNine;
-  var column1 = [];
-  var column2 = [];
-  var column3 = [];
-  var column4 = [];
-  var column5 = [];
-  var column6 = [];
-  var column7 = [];
-  var column8 = [];
-  var column9 = [];
 
 
   $('#new-game').click(function() {
@@ -42,138 +33,248 @@ $(function(){
     $('.row1').each(function(i) {
       $(this).html('<p>' + shuffleOne[i] + '</p>');
     })
-    // shuffleOne.splice(0,1);
-    // shuffleTwo = shuffle(shuffleOne);
-    // $('.col1:not(:first)').each(function(i) {
-    //   $(this).html('<p>' + shuffleTwo[i] + '</p>');
-    // })
-var fillInRow = function(rowclass) {
+
+  var fillInRow = function(rowclass) {
+    var column1 = [];
+    var column2 = [];
+    var column3 = [];
+    var column4 = [];
+    var column5 = [];
+    var column6 = [];
+    var column7 = [];
+    var column8 = [];
+    var column9 = [];
+    // var row2 = [];
+    // var row3 = [];
+    var row4 = [];
+    var row5 = [];
+    var row6 = [];
+    var row7 = [];
+    var row8 = [];
+    var row9 = [];
+
     $(rowclass).each(function(i) {
+      var row2 = [];
+      var row3 = [];
       var value = Math.floor(Math.random() * (10 - 1) + 1);
       var displayValue = '<p>' + value + '</p>';
-      console.log(displayValue);
+      console.log('initial: ' + displayValue);
 
-      if($(this).hasClass('col1')) {
+      if ($(this).hasClass('col1')) {
         $('.col1').each(function(i) {
           column1.push($(this).html());
         })
-        console.log(column1);
+        console.log('col 1: ' + column1);
         while ($.inArray(displayValue,column1) !== -1) {
-          console.log('in the array');
+          console.log('in column 1');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
-      if($(this).hasClass('col2')) {
+      if ($(this).hasClass('col2')) {
         $('.col2').each(function(i) {
           column2.push($(this).html());
         })
-        console.log(column2);
+        console.log('col 2: ' + column2);
         while ($.inArray(displayValue,column2) !== -1) {
-          console.log('in the array');
+          console.log('in col 2');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
-      if($(this).hasClass('col3')) {
+      if ($(this).hasClass('col3')) {
         $('.col3').each(function(i) {
           column3.push($(this).html());
         })
-        console.log(column3);
+        console.log('col 3: ' + column3);
         while ($.inArray(displayValue,column3) !== -1) {
-          console.log('in the array');
+          console.log('in col 3');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
-      if($(this).hasClass('col4')) {
+      if ($(this).hasClass('col4')) {
         $('.col4').each(function(i) {
           column4.push($(this).html());
         })
-        console.log(column4);
+        console.log('col 4: ' + column4);
         while ($.inArray(displayValue,column4) !== -1) {
-          console.log('in the array');
+          console.log('in col 4');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
-      if($(this).hasClass('col5')) {
+      if ($(this).hasClass('col5')) {
         $('.col5').each(function(i) {
           column5.push($(this).html());
         })
-        console.log(column5);
+        console.log('col 5: ' + column5);
         while ($.inArray(displayValue,column5) !== -1) {
-          console.log('in the array');
+          console.log('in col 5');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
-      if($(this).hasClass('col6')) {
+      if ($(this).hasClass('col6')) {
         $('.col6').each(function(i) {
           column6.push($(this).html());
         })
-        console.log(column6);
+        console.log('col 6: ' + column6);
         while ($.inArray(displayValue,column6) !== -1) {
-          console.log('in the array');
+          console.log('in col 6');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
-      if($(this).hasClass('col7')) {
+      if ($(this).hasClass('col7')) {
         $('.col7').each(function(i) {
           column7.push($(this).html());
         })
-        console.log(column7);
+        console.log('col 7: ' + column7);
         while ($.inArray(displayValue,column7) !== -1) {
-          console.log('in the array');
+          console.log('in col 7');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
-      if($(this).hasClass('col8')) {
+      if ($(this).hasClass('col8')) {
         $('.col8').each(function(i) {
           column8.push($(this).html());
         })
-        console.log(column8);
+        console.log('col 8: ' + column8);
         while ($.inArray(displayValue,column8) !== -1) {
-          console.log('in the array');
+          console.log('in col 8');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
-      if($(this).hasClass('col9')) {
+      if ($(this).hasClass('col9')) {
         $('.col9').each(function(i) {
           column9.push($(this).html());
         })
-        console.log(column9);
+        console.log('col 9: ' + column9);
         while ($.inArray(displayValue,column9) !== -1) {
-          console.log('in the array');
+          console.log('in col 9');
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
         }
-        $(this).html(displayValue);
       }
+      if ($(this).hasClass('row2')) {
+        $('.row2').each(function(i) {
+          row2.push($(this).html());
+        })
+        console.log('row 2: ' + row2);
+        while ($.inArray(displayValue,row2) !== -1) {
+          console.log('in row 2');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+      }
+      if ($(this).hasClass('row3')) {
+        $('.row3').each(function(i) {
+          row3.push($(this).html());
+        })
+        console.log('row 3: ' + row3);
+        while ($.inArray(displayValue,row3) !== -1) {
+          console.log('in row 3');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+      }
+      if ($(this).hasClass('row4')) {
+        $('.row4').each(function(i) {
+          row4.push($(this).html());
+        })
+        console.log('row 4: ' + row4);
+        while ($.inArray(displayValue,row4) !== -1) {
+          console.log('in row 4');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+      }
+      if ($(this).hasClass('row5')) {
+        $('.row5').each(function(i) {
+          row5.push($(this).html());
+        })
+        console.log('row 5: ' + row5);
+        while ($.inArray(displayValue,row5) !== -1) {
+          console.log('in row 5');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+      }
+      if ($(this).hasClass('row6')) {
+        $('.row6').each(function(i) {
+          row6.push($(this).html());
+        })
+        console.log('row 6: ' + row6);
+        while ($.inArray(displayValue,row6) !== -1) {
+          console.log('in row 6');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+      }
+      if ($(this).hasClass('row7')) {
+        $('.row7').each(function(i) {
+          row7.push($(this).html());
+        })
+        console.log('row 7: ' + row7);
+        while ($.inArray(displayValue,row7) !== -1) {
+          console.log('in row 7');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+      }
+      if ($(this).hasClass('row8')) {
+        $('.row8').each(function(i) {
+          row8.push($(this).html());
+        })
+        console.log('row 8: ' + row8);
+        while ($.inArray(displayValue,row8) !== -1) {
+          console.log('in row 8');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+      }
+      if ($(this).hasClass('row9')) {
+        $('.row9').each(function(i) {
+          row9.push($(this).html());
+        })
+        console.log('row 9: ' + row9);
+        while ($.inArray(displayValue,row9) !== -1) {
+          console.log('in row 9');
+          value = Math.floor(Math.random() * (10 - 1) + 1);
+          displayValue = '<p>' + value + '</p>';
+          console.log('new displayValue: ' + displayValue);
+        }
+      }
+      $(this).html(displayValue);
     })
-};
-fillInRow('.row2')
-fillInRow('.row3')
+  };
+  fillInRow('.row2')
+  fillInRow('.row3')
+  // fillInRow('.row4')
+  // fillInRow('.row5')
+  // fillInRow('.row6')
+  // fillInRow('.row7')
+  // fillInRow('.row8')
+  // fillInRow('.row9')
   });
 
 
