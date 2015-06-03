@@ -63,3 +63,12 @@ header {
   width: 120px;
   float: left;
 }
+td {
+  width: 36px;
+  height: 36px;
+  border-collapse: separate;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 130%;
+  padding: 3px;
+}
