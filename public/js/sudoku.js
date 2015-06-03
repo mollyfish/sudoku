@@ -70,6 +70,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 1: ' + column1);
         }
       }
       if ($(this).hasClass('col2')) {
@@ -82,6 +83,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 2: ' + column2);
         }
       }
       if ($(this).hasClass('col3')) {
@@ -94,6 +96,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 3: ' + column3);
         }
       }
       if ($(this).hasClass('col4')) {
@@ -106,6 +109,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 4: ' + column4);
         }
       }
       if ($(this).hasClass('col5')) {
@@ -118,6 +122,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 5: ' + column5);
         }
       }
       if ($(this).hasClass('col6')) {
@@ -130,6 +135,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 6: ' + column6);
         }
       }
       if ($(this).hasClass('col7')) {
@@ -142,6 +148,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 7: ' + column7);
         }
       }
       if ($(this).hasClass('col8')) {
@@ -154,6 +161,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 8: ' + column8);
         }
       }
       if ($(this).hasClass('col9')) {
@@ -166,6 +174,7 @@ $(function(){
           value = Math.floor(Math.random() * (10 - 1) + 1);
           displayValue = '<p>' + value + '</p>';
           console.log('new displayValue: ' + displayValue);
+          console.log('col 9: ' + column9);
         }
       }
       if ($(this).hasClass('row2')) {
